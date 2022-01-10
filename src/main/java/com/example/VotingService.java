@@ -12,7 +12,7 @@ public class VotingService {
     private static VotingService instance;
     private static MariaDbPoolDataSource dataSource;
 
-    public static VotingService getInstance() {
+    public static synchronized VotingService getInstance() {
         return instance == null ? new VotingService() : instance;
     }
 
